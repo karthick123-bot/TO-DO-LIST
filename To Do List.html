@@ -1,0 +1,49 @@
+
+<input id="input">
+<button onclick="add()">ADD</button>
+<ul id="h">
+    <li>
+        HELLO
+        <button onclick="deleteitem(event)">DELETE</button>
+    </li>
+</ul>
+
+<style>
+
+    body{
+        background-color:burlywood;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        margin: 10px;
+        color: yellow;  
+    }
+
+    #h{
+        margin-left: 50px;
+    }
+
+    
+</style>
+<script>
+
+    var h=document.getElementById("h")
+    var input=document.getElementById("input")
+
+function add(){
+
+    var listitem=document.createElement("li")
+    listitem.innerHTML=input.value+"<button onclick='deleteitem(event)'>DELETE</button>"
+    h.append(listitem)
+    h.style.color="yellow"
+    h.style.lineHeight="35px"
+    h.style.marginLeft="50px"
+}
+
+function deleteitem(event){
+
+    event.target.parentElement.remove()
+
+}
+</script>
